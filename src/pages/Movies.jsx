@@ -30,9 +30,9 @@ export default function Movies() {
     }
 
     return <div>
-        <h1>Movie</h1>
-        <section>
-            <h2>Best movie</h2>
+        <h1 className="text-center mb-3 mt-3">Movies</h1>
+        <section className="container">
+            <h2 className="text-center">Best movies</h2>
 
             <form onSubmit={searchMovies} className="row g-1">
 

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
     return (
-        <header>
+        <header className="bg-secondary">
             <div className="container">
                 <nav className="d-flex">
                     <ul className="list-unstyled d-flex">

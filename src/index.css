@@ -1,3 +1,7 @@
 .my-cont {
     justify-self: anchor-center;
 }
+
+.h-270 {
+    height: 250px;
+}
