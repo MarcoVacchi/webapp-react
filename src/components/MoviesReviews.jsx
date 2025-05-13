@@ -57,7 +57,9 @@ export default function MovieReviews() {
                 <label className="form-label">Lascia una descrizione!</label>
                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <div className="d-flex justify-content-center">
+                <button type="submit" className="btn btn-primary p-2">Invia recensione!</button>
+            </div>
         </form>
 
     </div>
