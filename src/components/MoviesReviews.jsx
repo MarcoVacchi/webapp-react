@@ -50,11 +50,11 @@ export default function MovieReviews() {
 
         <form className="mt-3 mb-3">
             <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">Aggiungi il tuo nome:</label>
+                <label className="form-label">Aggiungi il tuo nome:</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
             </div>
             <div className="mb-3">
-                <label for="exampleInputPassword1" className="form-label">Lascia una descrizione!</label>
+                <label className="form-label">Lascia una descrizione!</label>
                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
