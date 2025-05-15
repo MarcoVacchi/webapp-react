@@ -15,17 +15,16 @@ export default function Movies() {
     const endPoint = ('http://127.0.0.1:3000/movies');
 
     function getMovies() {
+
+        setLoad(true);
         axios.get(endPoint, {
-            params: {
-                search
-            }
+            params: { search }
         })
             .then(res => {
                 setMovies(res.data);
-
             })
             .catch(err => console.log(err))
-            .finally(setLoad(false));
+            .finally(() => setLoad(false));
     };
 
     useEffect(getMovies, []);
@@ -36,7 +35,7 @@ export default function Movies() {
     };
 
     if (load === true) {
-        return <div>Caricamento in corso..</div>
+        return <div className="text-white">Caricamento in corso..</div>
     };
 
     return <div className="bg-dark">
