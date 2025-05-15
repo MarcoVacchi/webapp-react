@@ -15,9 +15,9 @@ export default function CardReview({ data }) {
 
     return <div className="card mb-3 mt-3">
         <div className="card-body">
-            <p>Descrizione: {text}</p>
+            < p > Descrizione: {text}</p >
             <p>Utente: {name}</p>
-            <p className="card-text">Voto medio: {stars(vote)}</p>
-        </div>
-    </div>
+            <p className="card-text">Voto medio: {stars(vote)}{vote}</p>
+        </div >
+    </div >
 };

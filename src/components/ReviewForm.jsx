@@ -80,7 +80,7 @@ export default function ReviewForm({ movieId, onSubmitSuccess }) {
                 />
             </div>
             <div className="d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary p-2">Invia recensione!</button>
+                <button type="submit" className="btn btn-primary p-2 mb-3">Invia recensione!</button>
             </div>
         </form>
     );

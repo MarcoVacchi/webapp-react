@@ -37,22 +37,25 @@ export default function MovieReviews() {
         ));
     }
 
-    return <div className="container">
-        <div className="d-flex flex-column align-items-center text-center">
-            <h1 className="mt-3 mb-3">{movies.title}</h1>
-            <h2 className="mt-3 mb-3">{movies.director}</h2>
+    return <main className="bg-dark m-heigth">
+        <div className="container">
+            <div className="d-flex flex-column align-items-center text-center">
+                <h1 className="mt-3 mb-3">{movies.title}</h1>
+                <h2 className="mt-3 mb-3">{movies.director}</h2>
 
-            {movies.imagepath && (
-                <img src={movies.imagepath} alt={movies.title} className="img-rev mt-3 mb-3" />
-            )}
+                {movies.imagepath && (
+                    <img src={movies.imagepath} alt={movies.title} className="img-rev mt-3 mb-3" />
+                )}
+            </div>
+            <h3 className="text-center mt-5 mb-5">Recensioni</h3>
+            <div>{renderReviews()}</div>
+
+            <div >
+                <ReviewForm movieId={id} onSubmitSuccess={getMoviesId} />
+            </div>
+
         </div>
-        <h3 className="text-center mt-5 mb-5">Recensioni</h3>
-        <div>{renderReviews()}</div>
-
-        <div >
-            <ReviewForm movieId={id} onSubmitSuccess={getMoviesId} />
-        </div>
-
-    </div>
+        <div>ciaooooooo</div>
+    </main>
 };
 

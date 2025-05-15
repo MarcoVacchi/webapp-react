@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import axios from "axios";
+import { useContext } from "react";
+import { LoadContext } from "../contexts/LoadContext";
+import { NavLink } from "react-router-dom";
 
 export default function Movies() {
+
+    const { load, setLoad } = useContext(LoadContext);
 
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState('');
@@ -17,8 +22,10 @@ export default function Movies() {
         })
             .then(res => {
                 setMovies(res.data);
+
             })
             .catch(err => console.log(err))
+            .finally(setLoad(false));
     };
 
     useEffect(getMovies, []);
@@ -26,10 +33,22 @@ export default function Movies() {
     function searchMovies(event) {
         event.preventDefault();
         getMovies();
-    }
+    };
 
-    return <div>
-        <h1 className="text-center mb-3 mt-3">Movies</h1>
+    if (load === true) {
+        return <div>Caricamento in corso..</div>
+    };
+
+    return <div className="bg-dark">
+        <h1 className="text-center text-black fw-bold p-3 mb-3">Movies</h1>
+
+        <div className="col-auto container d-flex justify-content-end">
+            <NavLink to="/movies/new">
+                <button className="btn btn-primary mb-3">
+                    Aggiungi un film
+                </button>
+            </NavLink>
+        </div>
         <section className="container">
             <h2 className="text-center">Best movies</h2>
 
@@ -42,9 +61,12 @@ export default function Movies() {
 
                 </div>
                 <div className="col-auto">
-                    <button type="submit" className="btn btn-primary mb-3">Search film</button>
+                    <button type="submit" className="btn btn-primary mb-3">Cerca un film</button>
                 </div>
+
             </form>
+
+
 
             <div className="row g-3 container d-flex my-cont">
                 {movies.length ? (
